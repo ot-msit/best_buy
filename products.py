@@ -52,7 +52,7 @@ class Product:
 
     def show(self):
         """Prints a string that represents the product"""
-        print(f"{self.name}, Price: ${self.price}, Quantity: {self.quantity}")
+        return f"{self.name}, Price: ${self.price}, Quantity: {self.quantity}"
 
     def get_price(self) -> float:
         """getter and setter should be used, so also a getter for price"""
