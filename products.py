@@ -1,4 +1,6 @@
 class Product:
+    """Represents a store product with price, stock quantity and active state."""
+
     def __init__(self, name: str, price: float, quantity: int):
         """
         Initiator (constructor) method.
@@ -55,11 +57,11 @@ class Product:
         return f"{self.name}, Price: ${self.price}, Quantity: {self.quantity}"
 
     def get_price(self) -> float:
-        """getter and setter should be used, so also a getter for price"""
+        """Getter function for price."""
         return self.price
 
     def get_name(self) -> str:
-        """getter and setter should be used, so also a getter for name"""
+        """Getter function for name."""
         return self.name
 
     def buy(self, quantity: int) -> float:

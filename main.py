@@ -11,6 +11,7 @@ Store Menu
 """
 
 def main():
+    """Initialize the shop with its products and start the menu."""
     # setup initial stock of inventory
     product_list = [Product("MacBook Air M2", 1450, 100),
                     Product("Bose QuietComfort Earbuds", 250, 500),
@@ -20,6 +21,7 @@ def main():
     start(best_buy)
 
 def start(store: Store):
+    """Run the main menu loop and dispatch the user's choice."""
     product_list = store.get_all_products()
     shopping_list = []
     while True:
@@ -69,6 +71,7 @@ def start(store: Store):
                 pass
 
 def show_product_list(product_list: list[Product]):
+    """show the product list with an index"""
     print("---------------------------------------------")
     if not product_list:
         print("No products available")
@@ -78,6 +81,7 @@ def show_product_list(product_list: list[Product]):
     print("---------------------------------------------")
 
 def validate_product_answer(product_answer: str, product_list: list[Product]) -> int:
+    """Validate that the input is a number within the available product range."""
     if not product_answer.isdigit():
         raise ValueError("\nPlease enter a number")
     product_answer_int = int(product_answer)
@@ -86,6 +90,7 @@ def validate_product_answer(product_answer: str, product_list: list[Product]) ->
     return product_answer_int - 1 # reduce by 1 for index (starts counting at 0)
 
 def validate_product_amount(product_amount: str, product: Product) -> int:
+    """Validate that the input is a number within the available quantity range."""
     if not product_amount.isdigit():
         raise ValueError("\nPlease enter a number")
     product_amount_int = int(product_amount)

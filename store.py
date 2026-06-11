@@ -6,10 +6,11 @@ class Store:
     """
 
     def __init__(self, products: list[Product] | None = None):
+        """Constructor. Starts with the given product list or empty if none is given."""
         self.products: list[Product] = list(products) if products is not None else []
 
     def add_product(self, product: Product):
-        """Adds a product from store."""
+        """Adds a product to the store."""
         if product not in self.products:
             self.products.append(product)
 
