@@ -12,9 +12,9 @@ Store Menu
 
 def main():
     # setup initial stock of inventory
-    product_list = [Product("MacBook Air M2", price=1450, quantity=100),
-                    Product("Bose QuietComfort Earbuds", price=250, quantity=500),
-                    Product("Google Pixel 7", price=500, quantity=250)
+    product_list = [Product("MacBook Air M2", 1450, 100),
+                    Product("Bose QuietComfort Earbuds", 250, 500),
+                    Product("Google Pixel 7", 500, 250)
                    ]
     best_buy = Store(product_list)
     start(best_buy)
