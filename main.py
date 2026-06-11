@@ -44,14 +44,14 @@ def start(store: Store):
                                 print(f"\nOrder made! Total payment: ${total}")
                                 shopping_list = []
                                 product_list = store.get_all_products()
-                            except ValueError as e:
-                                print(e)
+                            except ValueError as error_message:
+                                print(error_message)
                         break
                     try:
                         product_number = validate_product_answer(product_answer, product_list)
                         product = product_list[product_number]
-                    except ValueError as e:
-                        print(e)
+                    except ValueError as error_message:
+                        print(error_message)
                         continue
                     while True:
                         product_amount = input("\nWhat amount do you want? ")
@@ -60,8 +60,8 @@ def start(store: Store):
                         try:
                             quantity = validate_product_amount(product_amount, product)
                             shopping_list.append((product, quantity))
-                        except ValueError as e:
-                            print(e)
+                        except ValueError as error_message:
+                            print(error_message)
                             continue
                         print("\nProduct added to list!\n")
                         break
